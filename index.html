@@ -8,153 +8,259 @@
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- Locomotive Scroll CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+
 <style>
 * {
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }
 
-body {
+html, body {
   margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, #FDEBD0, transparent 40%),
+    linear-gradient(180deg, #EAF6FF, #FFFFFF);
+}
+
+/* Locomotive */
+[data-scroll-container] {
   min-height: 100vh;
-  background: linear-gradient(180deg, #EAF6FF, #FFFFFF);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Glass Card */
 .container {
   width: 100%;
   max-width: 420px;
-  padding: 24px;
+  padding: 28px 22px;
   text-align: center;
-  animation: fadeUp 1s ease;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(14px);
+  border-radius: 28px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.08),
+    inset 0 0 0 1px rgba(255,255,255,0.4);
 }
 
-/* Logo Brand */
+/* Logo */
 .logo {
   width: 220px;
-  margin: 0 auto 10px;
-  animation: float 4s ease-in-out infinite;
+  margin: 0 auto 12px;
+  animation: float 5s ease-in-out infinite;
 }
 
 .logo img {
   width: 100%;
+  filter: drop-shadow(0 10px 16px rgba(0,0,0,0.15));
 }
 
 /* Title */
 h1 {
-  color: #6B4F3F;
-  font-size: 24px;
-  margin-bottom: 5px;
+  font-size: 26px;
+  color: #5A3E2B;
+  margin-bottom: 4px;
 }
 
 .subtitle {
   font-size: 14px;
-  color: #8B6F5A;
-  margin-bottom: 22px;
+  color: #7C6656;
+  margin-bottom: 26px;
 }
 
 /* Links */
 .links {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .link {
+  position: relative;
+  overflow: hidden;
   text-decoration: none;
-  padding: 16px;
-  border-radius: 18px;
+  padding: 16px 18px;
+  border-radius: 22px;
   font-size: 16px;
   font-weight: 700;
-  color: #6B4F3F;
-  border: 2px solid #6B4F3F;
-  box-shadow: 0 6px 0 #6B4F3F;
+  color: #5A3E2B;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: all 0.25s ease;
+
+  background: rgba(255,255,255,0.9);
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.08),
+    inset 0 -4px 0 rgba(0,0,0,0.08);
+
+  transition: all 0.3s ease;
 }
 
 .link img {
   width: 22px;
   height: 22px;
-  object-fit: contain;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.7),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.link:hover::after {
+  transform: translateX(100%);
+  transition: transform 0.7s ease;
 }
 
 .link:hover {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #6B4F3F;
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 18px 32px rgba(0,0,0,0.12),
+    inset 0 -2px 0 rgba(0,0,0,0.12);
 }
 
-/* Warna Pastel */
-.shopee { background: #FFE1CC; }
-.tiktok { background: #F3E6FF; }
-/* .tokopedia { background: #E1F3EA; } */
-.tokopedia img {
-  filter: saturate(0.9) brightness(0.95);
+/* Platform Colors */
+.shopee {
+  background: linear-gradient(135deg, #FFE1CC, #FFF3EA);
+}
+
+.tiktok {
+  background: linear-gradient(135deg, #F3E6FF, #FAF3FF);
+}
+
+.tokopedia {
+  background: linear-gradient(135deg, #E1F3EA, #F1FBF6);
+}
+
+/* Ripple */
+.link span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background: rgba(255,255,255,0.6);
 }
 
 /* Footer */
 .footer {
-  margin-top: 24px;
+  margin-top: 26px;
   font-size: 12px;
-  color: #9C8473;
+  color: #8F7868;
 }
 
 /* Animations */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div data-scroll-container>
 
-  <!-- LOGO BRAND -->
-  <div class="logo">
-    <!-- GANTI dengan logo kamu -->
-    <img src="fenfit.png" alt="fenfit.space">
+  <div class="container" data-scroll data-scroll-speed="1">
+
+    <div class="logo" data-scroll data-scroll-speed="2">
+      <img src="fenfit.png" alt="fenfit.space">
+    </div>
+
+    <h1 data-scroll data-scroll-speed="1">fenfit.space</h1>
+    <div class="subtitle" data-scroll data-scroll-speed="0.5">
+      Belanja terpercaya 🌷
+    </div>
+
+    <div class="links">
+
+      <a href="https://shopee.co.id/fenfit.space"
+         target="_blank"
+         class="link shopee"
+         data-scroll
+         data-scroll-speed="1.2">
+        <img src="https://shopee.co.id/favicon.ico">
+        Shopee Store
+      </a>
+
+      <a href="https://www.tiktok.com/@fenfit.space"
+         target="_blank"
+         class="link tiktok"
+         data-scroll
+         data-scroll-speed="1">
+        <img src="https://www.tiktok.com/favicon.ico">
+        TikTok Shop
+      </a>
+
+      <a href="https://www.tokopedia.com/fenfitspace"
+         target="_blank"
+         class="link tokopedia"
+         data-scroll
+         data-scroll-speed="0.8">
+        <img src="https://www.tokopedia.com/favicon.ico">
+        Tokopedia Shop
+      </a>
+
+    </div>
+
+    <div class="footer" data-scroll data-scroll-speed="0.3">
+      © 2026 fenfit.space
+    </div>
+
   </div>
-
-  <h1>fenfit.space</h1>
-  <div class="subtitle">Belanja terpercaya 🌷</div>
-
-  <!-- LINK TOKO -->
-  <div class="links">
-
-    <a href="https://shopee.co.id/fenfit.space?entryPoint=ShopBySearch&searchKeyword=fenfit.space" target="_blank" class="link shopee">
-      <img src="https://shopee.co.id/favicon.ico" alt="Shopee">
-      Shopee Store
-    </a>
-
-    <a href="https://www.tiktok.com/@fenfit.space?_r=1&_t=ZS-9320ktOHeBb" target="_blank" class="link tiktok">
-      <img src="https://www.tiktok.com/favicon.ico" alt="TikTok">
-      TikTok Shop
-    </a>
-
-    <a href="https://www.tokopedia.com/fenfitspace" target="_blank" class="link tokopedia">
-      <img src="https://www.tokopedia.com/favicon.ico" alt="Tokopedia">
-      Tokopedia Shop
-    </a>
-
-  </div>
-
-  <div class="footer">
-    © 2026 fenfit.space
-  </div>
-
 </div>
+
+<!-- Locomotive Scroll JS -->
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    smartphone: { smooth: true },
+    tablet: { smooth: true }
+  });
+
+  document.querySelectorAll(".link").forEach(link => {
+    link.addEventListener("click", function (e) {
+      const ripple = document.createElement("span");
+      ripple.className = "ripple";
+
+      const rect = this.getBoundingClientRect();
+      ripple.style.left = (e.clientX - rect.left) + "px";
+      ripple.style.top = (e.clientY - rect.top) + "px";
+      ripple.style.width = ripple.style.height = rect.width + "px";
+
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    });
+  });
+
+});
+</script>
 
 </body>
 </html>

@@ -3,264 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>fenfit.space | Link Toko</title>
+<title>fenfit.space | Cute Official Links</title>
 
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Locomotive Scroll CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+<!-- Font Cute -->
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+*{
+  box-sizing:border-box;
+  font-family:'Nunito',sans-serif;
+}
+html,body{
+  margin:0;
+  min-height:100%;
 }
 
-html, body {
-  margin: 0;
-  min-height: 100%;
-}
-
-body {
+/* Background pastel */
+body{
   background:
-    radial-gradient(circle at top, #FDEBD0, transparent 40%),
-    linear-gradient(180deg, #EAF6FF, #FFFFFF);
+    radial-gradient(circle at top, #FFE3F1, transparent 45%),
+    linear-gradient(180deg,#C7EDE6,#E8F6FF);
 }
 
-/* Locomotive */
-[data-scroll-container] {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Wrapper */
+.wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
 }
 
-/* Glass Card */
-.container {
-  width: 100%;
-  max-width: 420px;
-  padding: 28px 22px;
-  text-align: center;
-  background: rgba(255,255,255,0.65);
-  backdrop-filter: blur(14px);
-  border-radius: 28px;
+/* Card */
+.card{
+  width:100%;
+  max-width:420px;
+  background:#FFFFFF;
+  border-radius:32px;
+  padding:36px 28px;
+  text-align:center;
   box-shadow:
-    0 20px 40px rgba(0,0,0,0.08),
-    inset 0 0 0 1px rgba(255,255,255,0.4);
+    0 20px 40px rgba(255,182,193,.45),
+    inset 0 1px 0 rgba(255,255,255,.9);
+  animation:bounceIn .9s ease;
 }
 
 /* Logo */
-.logo {
-  width: 220px;
-  margin: 0 auto 12px;
-  animation: float 5s ease-in-out infinite;
+.logo{
+  width:160px;
+  margin:0 auto 14px;
 }
-
-.logo img {
-  width: 100%;
-  filter: drop-shadow(0 10px 16px rgba(0,0,0,0.15));
+.logo img{
+  width:100%;
 }
 
 /* Title */
-h1 {
-  font-size: 26px;
-  color: #5A3E2B;
-  margin-bottom: 4px;
+h1{
+  margin:8px 0 6px;
+  font-size:30px;
+  font-weight:800;
+  color:#FF6F91;
+}
+.subtitle{
+  font-size:14px;
+  color:#7A8CA3;
+  margin-bottom:26px;
 }
 
-.subtitle {
-  font-size: 14px;
-  color: #7C6656;
-  margin-bottom: 26px;
+/* Cute Divider */
+.divider{
+  width:60px;
+  height:6px;
+  background:linear-gradient(90deg,#FF9EB3,#FFD6E8);
+  border-radius:99px;
+  margin:0 auto 26px;
 }
 
 /* Links */
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.links{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
 }
 
-.link {
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  padding: 16px 18px;
-  border-radius: 22px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #5A3E2B;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  background: rgba(255,255,255,0.9);
-  box-shadow:
-    0 10px 20px rgba(0,0,0,0.08),
-    inset 0 -4px 0 rgba(0,0,0,0.08);
-
-  transition: all 0.3s ease;
+.link{
+  text-decoration:none;
+  padding:16px 18px;
+  border-radius:20px;
+  font-size:16px;
+  font-weight:700;
+  color:#5E6C84;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  background:linear-gradient(180deg,#FFF7FB,#F2FAFF);
+  border:2px dashed #FFD6E8;
+  transition:all .3s ease;
 }
 
-.link img {
-  width: 22px;
-  height: 22px;
+.link img{
+  width:22px;
+  height:22px;
 }
 
-.link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.7),
-    transparent
-  );
-  transform: translateX(-100%);
+/* Hover effect gemas */
+.link:hover{
+  transform:translateY(-4px) rotate(-0.5deg);
+  box-shadow:0 14px 28px rgba(255,182,193,.6);
+  color:#fff;
 }
 
-.link:hover::after {
-  transform: translateX(100%);
-  transition: transform 0.7s ease;
+/* Platform colors */
+.shopee:hover{
+  background:linear-gradient(180deg,#FFB199,#FF6F61);
 }
-
-.link:hover {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow:
-    0 18px 32px rgba(0,0,0,0.12),
-    inset 0 -2px 0 rgba(0,0,0,0.12);
+.tiktok:hover{
+  background:linear-gradient(180deg,#444,#111);
 }
-
-/* Platform Colors */
-.shopee {
-  background: linear-gradient(135deg, #FFE1CC, #FFF3EA);
-}
-
-.tiktok {
-  background: linear-gradient(135deg, #F3E6FF, #FAF3FF);
-}
-
-.tokopedia {
-  background: linear-gradient(135deg, #E1F3EA, #F1FBF6);
-}
-
-/* Ripple */
-.link span.ripple {
-  position: absolute;
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 600ms linear;
-  background: rgba(255,255,255,0.6);
+.tokopedia:hover{
+  background:linear-gradient(180deg,#8ED081,#43A047);
 }
 
 /* Footer */
-.footer {
-  margin-top: 26px;
-  font-size: 12px;
-  color: #8F7868;
+.footer{
+  margin-top:28px;
+  font-size:12px;
+  color:#9AAAC0;
 }
 
-/* Animations */
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes ripple {
-  to {
-    transform: scale(4);
-    opacity: 0;
-  }
+/* Animation */
+@keyframes bounceIn{
+  0%{opacity:0;transform:scale(.9) translateY(20px)}
+  60%{opacity:1;transform:scale(1.03)}
+  100%{transform:none}
 }
 </style>
 </head>
 
 <body>
+<div class="wrap">
 
-<div data-scroll-container>
+  <div class="card">
 
-  <div class="container" data-scroll data-scroll-speed="1">
-
-    <div class="logo" data-scroll data-scroll-speed="2">
+    <div class="logo">
       <img src="fenfit.png" alt="fenfit.space">
     </div>
 
-    <h1 data-scroll data-scroll-speed="1">fenfit.space</h1>
-    <div class="subtitle" data-scroll data-scroll-speed="0.5">
-      Belanja terpercaya 🌷
-    </div>
+    <h1>fenfit.space</h1>
+    <div class="subtitle">Official Store • Trusted Shopping</div>
+    <div class="divider"></div>
 
     <div class="links">
-
-      <a href="https://shopee.co.id/fenfit.space"
-         target="_blank"
-         class="link shopee"
-         data-scroll
-         data-scroll-speed="1.2">
+      <a class="link shopee" href="https://shopee.co.id/fenfit.space" target="_blank">
         <img src="https://shopee.co.id/favicon.ico">
-        Shopee Store
+        Shopee Official
       </a>
 
-      <a href="https://www.tiktok.com/@fenfit.space"
-         target="_blank"
-         class="link tiktok"
-         data-scroll
-         data-scroll-speed="1">
+      <a class="link tiktok" href="https://www.tiktok.com/@fenfit.space" target="_blank">
         <img src="https://www.tiktok.com/favicon.ico">
         TikTok Shop
       </a>
 
-      <a href="https://www.tokopedia.com/fenfitspace"
-         target="_blank"
-         class="link tokopedia"
-         data-scroll
-         data-scroll-speed="0.8">
+      <a class="link tokopedia" href="https://www.tokopedia.com/fenfitspace" target="_blank">
         <img src="https://www.tokopedia.com/favicon.ico">
-        Tokopedia Shop
+        Tokopedia Official
       </a>
-
     </div>
 
-    <div class="footer" data-scroll data-scroll-speed="0.3">
-      © 2026 fenfit.space
+    <div class="footer">
+      Made with 💖 by fenfit.space
     </div>
 
   </div>
+
 </div>
-
-<!-- Locomotive Scroll JS -->
-<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-    smartphone: { smooth: true },
-    tablet: { smooth: true }
-  });
-
-  document.querySelectorAll(".link").forEach(link => {
-    link.addEventListener("click", function (e) {
-      const ripple = document.createElement("span");
-      ripple.className = "ripple";
-
-      const rect = this.getBoundingClientRect();
-      ripple.style.left = (e.clientX - rect.left) + "px";
-      ripple.style.top = (e.clientY - rect.top) + "px";
-      ripple.style.width = ripple.style.height = rect.width + "px";
-
-      this.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-
-});
-</script>
-
 </body>
 </html>
